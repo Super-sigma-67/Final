@@ -8,7 +8,7 @@ import ImageCard from "../components/imgg";
 function Home() {
   return ( 
   <> 
-  <div class name = "bg-amber-500">
+  <div className = "bg-amber-500">
     <h1>Home Page</h1> 
     <Card myTitle="Welcome to my project!" mySubtitle="Helping you save money on subscriptions!" myBlurb="By Coyo Tena"></Card>
 
