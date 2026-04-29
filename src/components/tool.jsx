@@ -40,7 +40,6 @@ function SampleTask(){
    return(
        <div>
 
-<p>Subscription Name                                       Subscription price</p>
       
 {/* name  */}
        <form className="border" onSubmit={handleSubmit}>
@@ -69,7 +68,10 @@ function SampleTask(){
 {/* map over the locations to show everything you've submitted */}
        {allSubscriptions.map((subscription)=>(
                <div key={subscription.id}>
-                       {subscription.name} - ${subscription.price}
+
+
+                  <p>Subscription Name: {subscription.name}</p>
+                  <p>Subscription Price: ${subscription.price}</p>
                </div>
        )
        )}
