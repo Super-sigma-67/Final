@@ -8,6 +8,7 @@ function SampleTask(){
 // create a stateful variable for the array of locations (notice how it is an empty array with square brackets[])
    const [name, setName] = useState ("");
    const [allSubscriptions, setAllSubscriptions] = useState([]);
+   const [price, setPrice] = useState ("0");
 
 
 
@@ -23,7 +24,8 @@ function SampleTask(){
 // then create a variable for the new entry, id.Date.now() ensures a unique id
    const newEntry = {
         id: Date.now(),
-        name: name
+        name: name,
+        price: price,
    };
 
 
@@ -31,23 +33,31 @@ function SampleTask(){
 // then you want to change the description (the value of the input) back to blank for the next submission
    setAllSubscriptions([...allSubscriptions, newEntry]);
    setName("");
+   setPrice("0");
 }
 
 
    return(
        <div>
+
+<p>Subscription Name                                       Subscription price</p>
       
-{/* for the form, add onSubmit and make it run the function you defined earlier  */}
-       <form onSubmit={handleSubmit}>
+{/* name  */}
+       <form className="border" onSubmit={handleSubmit}>
          <input
          className="border"
          type="text"
          value={name}
-
-
-// also make sure to add this onChange. since the input is being controlled by react, you need to update the value using the setDescription
          onChange={(event) => setName(event.target.value)}
          />
+{/* price */}
+<input
+         className="border"
+         type="text"
+         value={price}
+         onChange={(event) => setPrice(event.target.value)}
+         />
+
          <button
          className="border"
          type="submit">Submit</button>
@@ -57,9 +67,9 @@ function SampleTask(){
 
 
 {/* map over the locations to show everything you've submitted */}
-       {locations.map((location)=>(
-               <div key={location.id}>
-                       {location.description}
+       {allSubscriptions.map((subscription)=>(
+               <div key={subscription.id}>
+                       {subscription.name} - ${subscription.price}
                </div>
        )
        )}
