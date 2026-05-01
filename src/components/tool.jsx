@@ -1,15 +1,14 @@
 import { useState } from 'react';
 
 
-function SampleTask(){
+function SampleTask({totalPrice, setTotalPrice}){
 
 
 // create a stateful variable for each field (start with just one)
 // create a stateful variable for the array of locations (notice how it is an empty array with square brackets[])
    const [name, setName] = useState ("");
    const [allSubscriptions, setAllSubscriptions] = useState([]);
-   const [price, setPrice] = useState ("0");
-
+   const [price, setPrice] = useState ("");
 
 
 
@@ -37,6 +36,15 @@ function SampleTask(){
 }
 
 
+// function handleClick(){
+// let sum = 0
+// const calculatedPrice = allSubscriptions.filter((subscription) =>{
+//   sum = sum + parseFloat(subscription.price) || 0
+// })
+// setTotalPrice(sum);
+// }
+
+
    return(
        <div>
 
@@ -47,6 +55,7 @@ function SampleTask(){
          className="border"
          type="text"
          value={name}
+         placeholder = "Subscription Name"
          onChange={(event) => setName(event.target.value)}
          />
 {/* price */}
@@ -54,7 +63,9 @@ function SampleTask(){
          className="border"
          type="text"
          value={price}
+         placeholder = "Price ($)"
          onChange={(event) => setPrice(event.target.value)}
+         
          />
 
          <button
@@ -62,8 +73,11 @@ function SampleTask(){
          type="submit">Submit</button>
 
 
+
          </form>
 
+         {/* <button onClick={handleClick}>calculate!!!!</button>
+         <p>Total Price: ${totalPrice}</p> */}
 
 {/* map over the locations to show everything you've submitted */}
        {allSubscriptions.map((subscription)=>(
@@ -77,6 +91,7 @@ function SampleTask(){
        )}
        </div>
    )
+
 };
 
 
