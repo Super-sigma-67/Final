@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 
-function SampleTask({totalPrice, setTotalPrice}){
+function SampleTask({totalPrice, setTotalPrice, allSubscriptions, setAllSubscriptions}){
 
 
 // create a stateful variable for each field (start with just one)
 // create a stateful variable for the array of locations (notice how it is an empty array with square brackets[])
    const [name, setName] = useState ("");
-   const [allSubscriptions, setAllSubscriptions] = useState([]);
    const [price, setPrice] = useState ("");
+   
 
 
 
@@ -76,11 +76,12 @@ function SampleTask({totalPrice, setTotalPrice}){
 
          </form>
 
-         {/* <button onClick={handleClick}>calculate!!!!</button>
-         <p>Total Price: ${totalPrice}</p> */}
+    
 
 {/* map over the locations to show everything you've submitted */}
-       {allSubscriptions.map((subscription)=>(
+
+       {allSubscriptions.length > 0 &&
+       allSubscriptions.map((subscription)=>(
                <div key={subscription.id}>
 
 

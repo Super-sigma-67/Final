@@ -6,6 +6,10 @@ import Card from "../components/Card";
 import SimpleTask from "../components/tool";
 
 
+     
+
+function TotalMoney({totalPrice, setTotalPrice, allSubscriptions, setAllSubscriptions}){
+
      function handleClick(){
 let sum = 0
 const calculatedPrice = allSubscriptions.filter((subscription) =>{
@@ -14,8 +18,6 @@ const calculatedPrice = allSubscriptions.filter((subscription) =>{
 setTotalPrice(sum);
 }
 
-
-function TotalMoney({totalPrice, setTotalPrice}){
 
      return(
           <>

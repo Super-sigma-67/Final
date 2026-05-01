@@ -1,7 +1,7 @@
 import Card from "../components/Card";
 import SampleTask from "../components/tool";
 
-function Helper() {
+function Helper({ totalPrice, setTotalPrice, allSubscriptions, setAllSubscriptions }) {
 
 
   return ( 
@@ -11,7 +11,7 @@ function Helper() {
     <Card myTitle="Coyos Subscription helper" mySubtitle="Directions:" myBlurb="Type in your subscription, how much money it is a month and then save! Repeat as many times as needed :)" ></Card>
     
     
-    <SampleTask />
+    <SampleTask totalPrice={totalPrice} setTotalPrice={setTotalPrice} allSubscriptions={allSubscriptions} setAllSubscriptions={setAllSubscriptions} />
   </div>
    
   </>

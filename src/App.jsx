@@ -11,6 +11,8 @@ import TotalMoney from "./pages/TotalMoney";
 function App() {
 
 const [totalPrice, setTotalPrice] = useState(0);
+   const [allSubscriptions, setAllSubscriptions] = useState([]);
+
 
 
   return (
@@ -28,8 +30,8 @@ const [totalPrice, setTotalPrice] = useState(0);
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/helper" element={<Helper totalPrice = {totalPrice} setTotalPrice = {setTotalPrice} />} />
-        <Route path="/totalmoney" element={<TotalMoney totalPrice = {totalPrice} setTotalPrice = {setTotalPrice} />} />
+        <Route path="/helper" element={<Helper totalPrice = {totalPrice} setTotalPrice = {setTotalPrice} allSubscriptions = {allSubscriptions} setAllSubscriptions = {setAllSubscriptions} />} />
+        <Route path="/totalmoney" element={<TotalMoney totalPrice = {totalPrice} setTotalPrice = {setTotalPrice} allSubscriptions = {allSubscriptions} setAllSubscriptions = {setAllSubscriptions} />} />
       </Routes>
     </BrowserRouter>
 
