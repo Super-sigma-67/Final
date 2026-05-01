@@ -17,7 +17,7 @@ const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename="/Final/">
       <nav>
         <Link to="/">Home</Link> |{" "}
         <Link to="/about">About</Link> |{" "}
